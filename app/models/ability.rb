@@ -28,5 +28,13 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
+
+
+  if user.admin?
+    can :manage, Product
+  elsif user.guest?
+    can :show, Product
   end
+
+end
 end
